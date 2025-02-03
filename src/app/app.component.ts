@@ -21,9 +21,18 @@ export class AppComponent {
   selectedFont: string = "Arial";
   selectedSize: number = 12;
   selectedColor: string = "black";
+  selectedSinglespaced: string = "1";
 
   //Habilitar textarea
   enableTextarea(): void {
     this.isTextareaEnabled = true;
   }
+
+  //Borrar contenido
+  textContent: string = '';
+  clearText() {
+    this.textContent = '';
+  }
 }
+
+

@@ -36,6 +36,8 @@
         <option value="Arial">Arial</option>
         <option value="Georgia">Georgia</option>
         <option value="Courier New">Courier New</option>
+        <option value="Calibri">Calibri</option>
+        <option value="Forte">Forte</option>
         </select>
       </div>
       <div class="option">
@@ -44,6 +46,9 @@
         <option value="12">12</option>
         <option value="16">16</option>
         <option value="18">18</option>
+        <option value="20">20</option>
+        <option value="22">22</option>
+        <option value="24">24</option>
         </select>
       </div>
       <div class="option">
@@ -52,18 +57,35 @@
         <option value="black">Negro</option>
         <option value="blue">Azul</option>
         <option value="red">Rojo</option>
+        <option value="Green">Verde</option>
+        <option value="Yellow">Amarillo</option>
         </select>
       </div>
+    <div class="option">
+      <label for="singlespaced">Interlineado</label>
+      <select id="singlespaced" [(ngModel)]="selectedSinglespaced"> 
+      <option value="1">1</option>
+      <option value="1.15">1.15</option>
+      <option value="1.5">1.5</option>
+      <option value="2">2</option>
+      <option value="2.5">2.5</option>
+      <option value="3">3</option>
+      </select>
     </div>
-    <textarea
+  </div>
+    <textarea [(ngModel)]="textContent"
       [disabled]="!isTextareaEnabled"
       [(ngModel)]="blogText"
       [style.font-family]="selectedFont"
       [style.font-size.px]="selectedSize"
       [style.color]="selectedColor"
+      [style.line-height]="selectedSinglespaced"
       placeholder="Escríbe aquí tu comentario..."
     ></textarea>
-</div>
+    <button (click)="clearText()">Borrar</button>
+  </div>
+  
+
 
 <footer>
   <div class="copyright">
